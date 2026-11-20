@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "runtime": {
+    "version": "b12032",
+    "backend": "cpu",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12032/llama-b12032-bin-win-cpu-x64.zip",
+    "sha256": "5296f5d18bb7d422c7c26f4bb9bc796d9d4f41e1312a8c296cff475bdc60d0d4",
+    "bytes": 24582754,
+    "license": "MIT",
+    "source": "https://github.com/ggml-org/llama.cpp"
+  },
+  "models": [
+    {
+      "id": "smollm2-135m-smoke",
+      "name": "SmolLM2 135M Instruct В· smoke test",
+      "architecture": "llama",
+      "parameters": "135M",
+      "quantization": "Q4_K_M",
+      "category": "Tiny Models",
+      "license": "Apache-2.0",
+      "license_url": "https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct/blob/main/LICENSE",
+      "source": "bartowski/SmolLM2-135M-Instruct-GGUF",
+      "revision": "09816acd5d99df7be770d85ea30822623dab342c",
+      "filename": "SmolLM2-135M-Instruct-Q4_K_M.gguf",
+      "url": "https://huggingface.co/bartowski/SmolLM2-135M-Instruct-GGUF/resolve/09816acd5d99df7be770d85ea30822623dab342c/SmolLM2-135M-Instruct-Q4_K_M.gguf",
+      "sha256": "2e8040ceae7815abe0dcb3540b9995eaa1fa0d2ca9e797d0a635ae4433c68c2d",
+      "bytes": 105454432,
+      "ram_estimate_bytes": 536870912,
+      "capabilities": [
+        "chat"
+      ],
+      "compatibility": "Pending real runtime smoke test; not a coding-quality benchmark"
+    },
+    {
+      "id": "qwen-1.5b",
+      "name": "Qwen 2.5 1.5B — основной помощник",
+      "parameters": "1.5B",
+      "architecture": "qwen2",
+      "quantization": "Q4_K_M",
+      "category": "Assistant",
+      "license": "Apache-2.0",
+      "license_url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF",
+      "source": "Qwen/Qwen2.5-1.5B-Instruct-GGUF",
+      "revision": "91cad51170dc346986eccefdc2dd33a9da36ead9",
+      "ram_estimate_bytes": 2147483648,
+      "capabilities": [
+        "chat"
+      ],
+      "filename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/91cad51170dc346986eccefdc2dd33a9da36ead9/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+      "sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+      "bytes": 1117320736
+    },
+    {
+      "id": "qwen-coder-1.5b",
+      "name": "Qwen Coder 1.5B — программирование",
+      "parameters": "1.5B",
+      "architecture": "qwen2",
+      "quantization": "Q4_K_M",
+      "category": "Assistant",
+      "license": "Apache-2.0",
+      "license_url": "https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF",
+      "source": "Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF",
+      "revision": "f86cb2c1fa58255f8052cc32aeede1b7482d4361",
+      "ram_estimate_bytes": 2147483648,
+      "capabilities": [
+        "chat"
+      ],
+      "filename": "qwen2.5-coder-1.5b-instruct-q4_k_m.gguf",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/resolve/f86cb2c1fa58255f8052cc32aeede1b7482d4361/qwen2.5-coder-1.5b-instruct-q4_k_m.gguf",
+      "sha256": "cc324af070c2ecbfd324a30884d2f951a7ff756aba85cb811a6ec436933bb046",
+      "bytes": 1117320768
+    },
+    {
+      "id": "smolvlm-500m",
+      "name": "SmolVLM 500M — описание изображения",
+      "parameters": "500M",
+      "architecture": "llama",
+      "quantization": "Q8_0",
+      "category": "Vision",
+      "license": "Apache-2.0",
+      "license_url": "https://huggingface.co/ggml-org/SmolVLM-500M-Instruct-GGUF",
+      "source": "ggml-org/SmolVLM-500M-Instruct-GGUF",
+      "revision": "72e986006ef53e37cdd3f6d4241c90b0f01df376",
+      "ram_estimate_bytes": 2147483648,
+      "capabilities": [
+        "vision"
+      ],
+      "filename": "SmolVLM-500M-Instruct-Q8_0.gguf",
+      "url": "https://huggingface.co/ggml-org/SmolVLM-500M-Instruct-GGUF/resolve/72e986006ef53e37cdd3f6d4241c90b0f01df376/SmolVLM-500M-Instruct-Q8_0.gguf",
+      "sha256": "9d4612de6a42214499e301494a3ecc2be0abdd9de44e663bda63f1152fad1bf4",
+      "bytes": 436806912,
+      "projector": {
+        "filename": "mmproj-SmolVLM-500M-Instruct-Q8_0.gguf",
+        "url": "https://huggingface.co/ggml-org/SmolVLM-500M-Instruct-GGUF/resolve/72e986006ef53e37cdd3f6d4241c90b0f01df376/mmproj-SmolVLM-500M-Instruct-Q8_0.gguf",
+        "sha256": "d1eb8b6b23979205fdf63703ed10f788131a3f812c7b1f72e0119d5d81295150",
+        "bytes": 108783360
+      }
+    },
+    {
+      "id": "qwen2.5-0.5b-instruct",
+      "name": "Qwen2.5-0.5B-Instruct",
+      "parameters": "0.5B",
+      "architecture": "qwen2",
+      "quantization": "Q4_K_M",
+      "category": "Assistant",
+      "license": "apache-2.0",
+      "license_url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/tree/9217f5db79a29953eb74d5343926648285ec7e67",
+      "source": "Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+      "revision": "9217f5db79a29953eb74d5343926648285ec7e67",
+      "filename": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+      "bytes": 491400032,
+      "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/9217f5db79a29953eb74d5343926648285ec7e67/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+      "ram_estimate_bytes": 2638883680,
+      "capabilities": [
+        "chat"
+      ],
+      "compatibility": "Architecture supported; this model has not been inference-tested locally"
+    },
+    {
+      "id": "qwen2.5-3b-instruct",
+      "name": "Qwen2.5-3B-Instruct",
+      "parameters": "3B",
+      "architecture": "qwen2",
+      "quantization": "Q4_K_M",
+      "category": "Assistant",
+      "license": "Qwen Research",
+      "license_url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF/blob/7dabda4d13d513e3e842b20f0d435c732f172cbe/LICENSE",
+      "source": "Qwen/Qwen2.5-3B-Instruct-GGUF",
+      "revision": "7dabda4d13d513e3e842b20f0d435c732f172cbe",
+      "filename": "qwen2.5-3b-instruct-q4_k_m.gguf",
+      "bytes": 2104932768,
+      "sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF/resolve/7dabda4d13d513e3e842b20f0d435c732f172cbe/qwen2.5-3b-instruct-q4_k_m.gguf",
+      "ram_estimate_bytes": 4252416416,
+      "capabilities": [
+        "chat"
+      ],
+      "compatibility": "Architecture supported; this model has not been inference-tested locally"
+    },
+    {
+      "id": "qwen2.5-coder-0.5b-instruct",
+      "name": "Qwen2.5-Coder-0.5B-Instruct",
+      "parameters": "0.5B",
+      "architecture": "qwen2",
+      "quantization": "Q4_K_M",
+      "category": "Coding",
+      "license": "apache-2.0",
+      "license_url": "https://huggingface.co/Qwen/Qwen2.5-Coder-0.5B-Instruct-GGUF/tree/ebb2015119c907b064c512bf053e945850b5875f",
+      "source": "Qwen/Qwen2.5-Coder-0.5B-Instruct-GGUF",
+      "revision": "ebb2015119c907b064c512bf053e945850b5875f",
+      "filename": "qwen2.5-coder-0.5b-instruct-q4_k_m.gguf",
+      "bytes": 491400064,
+      "sha256": "1d9614638d18024d0fbb36575a15f1302a3adf044df10345688ec4f6e1c4ff32",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-Coder-0.5B-Instruct-GGUF/resolve/ebb2015119c907b064c512bf053e945850b5875f/qwen2.5-coder-0.5b-instruct-q4_k_m.gguf",
+      "ram_estimate_bytes": 2638883712,
+      "capabilities": [
+        "chat"
+      ],
+      "compatibility": "Architecture supported; this model has not been inference-tested locally"
+    },
+    {
+      "id": "qwen2.5-coder-3b-instruct",
+      "name": "Qwen2.5-Coder-3B-Instruct",
+      "parameters": "3B",
+      "architecture": "qwen2",
+      "quantization": "Q4_K_M",
+      "category": "Coding",
+      "license": "Qwen Research",
+      "license_url": "https://huggingface.co/Qwen/Qwen2.5-Coder-3B-Instruct-GGUF/blob/f74adce6aa16316c625447af059dbebe4983757c/LICENSE",
+      "source": "Qwen/Qwen2.5-Coder-3B-Instruct-GGUF",
+      "revision": "f74adce6aa16316c625447af059dbebe4983757c",
+      "filename": "qwen2.5-coder-3b-instruct-q4_k_m.gguf",
+      "bytes": 2104932800,
+      "sha256": "724fb256bec1ff062b2f65e4569e871ad2e95ab2a3989723d1769c54294730b7",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-Coder-3B-Instruct-GGUF/resolve/f74adce6aa16316c625447af059dbebe4983757c/qwen2.5-coder-3b-instruct-q4_k_m.gguf",
+      "ram_estimate_bytes": 4252416448,
+      "capabilities": [
+        "chat"
+      ],
+      "compatibility": "Architecture supported; this model has not been inference-tested locally"
+    },
+    {
+      "id": "qwen2.5-coder-7b-instruct",
+      "name": "Qwen2.5-Coder-7B-Instruct",
+      "parameters": "7B",
+      "architecture": "qwen2",
+      "quantization": "Q4_K_M",
+      "category": "Coding",
+      "license": "apache-2.0",
+      "license_url": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/tree/13fb94bfda8c8cf22497dc57b78f391a9acb426a",
+      "source": "Qwen/Qwen2.5-Coder-7B-Instruct-GGUF",
+      "revision": "13fb94bfda8c8cf22497dc57b78f391a9acb426a",
+      "filename": "qwen2.5-coder-7b-instruct-q4_k_m.gguf",
+      "bytes": 4683073536,
+      "sha256": "509287f78cb4d4cf6b3843734733b914b2c158e43e22a7f4bf5e963800894d3c",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/resolve/13fb94bfda8c8cf22497dc57b78f391a9acb426a/qwen2.5-coder-7b-instruct-q4_k_m.gguf",
+      "ram_estimate_bytes": 6830557184,
+      "capabilities": [
+        "chat"
+      ],
+      "compatibility": "Architecture supported; this model has not been inference-tested locally"
+    },
+    {
+      "id": "smollm2-1.7b-instruct",
+      "name": "SmolLM2-1.7B-Instruct",
+      "parameters": "1.7B",
+      "architecture": "llama",
+      "quantization": "Q4_K_M",
+      "category": "Assistant",
+      "license": "apache-2.0",
+      "license_url": "https://huggingface.co/bartowski/SmolLM2-1.7B-Instruct-GGUF/tree/1f03464768bfcc0319fc50da8ff5fb20b6417ba2",
+      "source": "bartowski/SmolLM2-1.7B-Instruct-GGUF",
+      "revision": "1f03464768bfcc0319fc50da8ff5fb20b6417ba2",
+      "filename": "SmolLM2-1.7B-Instruct-Q4_K_M.gguf",
+      "bytes": 1055609824,
+      "sha256": "77665ea4815999596525c636fbeb56ba8b080b46ae85efef4f0d986a139834d7",
+      "url": "https://huggingface.co/bartowski/SmolLM2-1.7B-Instruct-GGUF/resolve/1f03464768bfcc0319fc50da8ff5fb20b6417ba2/SmolLM2-1.7B-Instruct-Q4_K_M.gguf",
+      "ram_estimate_bytes": 3203093472,
+      "capabilities": [
+        "chat"
+      ],
+      "compatibility": "Architecture supported; this model has not been inference-tested locally"
+    },
+    {
+      "id": "dolphin3.0-llama3.2-3b",
+      "name": "Dolphin3.0-Llama3.2-3B",
+      "parameters": "3B",
+      "architecture": "llama",
+      "quantization": "Q4_K_M",
+      "category": "Community / uncensored",
+      "license": "llama3.2",
+      "license_url": "https://huggingface.co/bartowski/Dolphin3.0-Llama3.2-3B-GGUF/tree/ac6b1ee98e3864ebd5998216f800a07d74b166b5",
+      "source": "bartowski/Dolphin3.0-Llama3.2-3B-GGUF",
+      "revision": "ac6b1ee98e3864ebd5998216f800a07d74b166b5",
+      "filename": "Dolphin3.0-Llama3.2-3B-Q4_K_M.gguf",
+      "bytes": 2019382400,
+      "sha256": "5d6d02eeefa1ab5dbf23f97afdf5c2c95ad3d946dc3b6e9ab72e6c1637d54177",
+      "url": "https://huggingface.co/bartowski/Dolphin3.0-Llama3.2-3B-GGUF/resolve/ac6b1ee98e3864ebd5998216f800a07d74b166b5/Dolphin3.0-Llama3.2-3B-Q4_K_M.gguf",
+      "ram_estimate_bytes": 4166866048,
+      "capabilities": [
+        "chat"
+      ],
+      "compatibility": "Architecture supported; this model has not been inference-tested locally"
+    },
+    {
+      "id": "dolphin3.0-llama3.1-8b",
+      "name": "Dolphin3.0-Llama3.1-8B",
+      "parameters": "8B",
+      "architecture": "llama",
+      "quantization": "Q4_K_M",
+      "category": "Community / uncensored",
+      "license": "llama3.1",
+      "license_url": "https://huggingface.co/bartowski/Dolphin3.0-Llama3.1-8B-GGUF/tree/a6274707ba8c5f12d4521eabbce1b318bb2f27f5",
+      "source": "bartowski/Dolphin3.0-Llama3.1-8B-GGUF",
+      "revision": "a6274707ba8c5f12d4521eabbce1b318bb2f27f5",
+      "filename": "Dolphin3.0-Llama3.1-8B-Q4_K_M.gguf",
+      "bytes": 4920749472,
+      "sha256": "268390e07edd407ad93ea21a868b7ae995b5950e01cad0db9e1802ae5049d405",
+      "url": "https://huggingface.co/bartowski/Dolphin3.0-Llama3.1-8B-GGUF/resolve/a6274707ba8c5f12d4521eabbce1b318bb2f27f5/Dolphin3.0-Llama3.1-8B-Q4_K_M.gguf",
+      "ram_estimate_bytes": 7068233120,
+      "capabilities": [
+        "chat"
+      ],
+      "compatibility": "Architecture supported; this model has not been inference-tested locally"
+    }
+  ],
+  "backends": {
+    "vulkan": {
+      "version": "b12032",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12032/llama-b12032-bin-win-vulkan-x64.zip",
+      "bytes": 37523450,
+      "sha256": "19a8bbf269fa683ae7bc04f886c9c2a93e0655c2606f37d2b60069bf9e8bcc32"
+    }
+  }
+}

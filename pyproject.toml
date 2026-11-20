@@ -1,0 +1,10 @@
+[project]
+name = "rainforge-nexus"
+version = "0.1.0"
+description = "Local-first Windows AI workspace"
+requires-python = ">=3.11"
+license = "MIT"
+
+[tool.rainforge]
+recommended-build-python = "3.12"
+worker-transport = "jsonrpc-stdio"

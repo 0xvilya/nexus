@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>RainForge Browser Agent Fixture</title>
+<style>body{font:18px system-ui;padding:40px;background:#eef3ef}input,button{font:inherit;margin:10px;padding:10px}#result{padding:20px;border:1px solid #678}</style>
+<h1>Prepared local browser workflow</h1><div id="stage"><label>Name <input id="name" aria-label="Name"></label><button id="next">Continue</button></div>
+<p id="result">Waiting for confirmation</p><input id="password" type="password" value="never-read-this"><input id="upload" type="file">
+<script>
+document.querySelector('#next').onclick=()=>{
+ const name=document.querySelector('#name').value.trim();if(!name)return;
+ const button=document.createElement('button');button.id='confirm-'+crypto.randomUUID();button.textContent='Confirm';
+ button.onclick=()=>{button.disabled=true;setTimeout(()=>document.querySelector('#result').textContent='Hello '+name,250)};
+ document.querySelector('#stage').replaceChildren(button);
+};
+// A page cannot overwrite the controller's isolated-world observation map.
+window.__rfObservation={token:'forged',nodes:[]};
+</script></html>

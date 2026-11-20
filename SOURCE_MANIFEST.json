@@ -1,0 +1,870 @@
+{
+  "format": "rainforge.public-source.v1",
+  "files": [
+    {
+      "path": ".github/workflows/windows-core.yml",
+      "bytes": 2951,
+      "sha256": "e1aa94a017756dd7e4ebdcf082dd8df5ff8c4238c6d874c5c9731cda95a49004"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 336,
+      "sha256": "cbf6ef7efda58262141412d1579a6d0c5ecaf0c80fdd40f0690c8f395d27c3e4"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1079,
+      "sha256": "5fee7ea5878c7670cd533cc8afbee9dedbc359abc504fc2bc99ef075b0c596ad"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3135,
+      "sha256": "00a9120396ba8edd53669bbcbe1fa1f88f53c8764762a31cee9908f92c076483"
+    },
+    {
+      "path": "apps/desktop/index.html",
+      "bytes": 303,
+      "sha256": "b5e6c7cbb1b8f10641855acbcdc28ad078b0eb9dfba5cfd70905e3ca9ff67451"
+    },
+    {
+      "path": "apps/desktop/package-lock.json",
+      "bytes": 51349,
+      "sha256": "48a5c2dff05182d26be255467fa4b88a71aceb9c7924e74d3a73dd7481e9edaf"
+    },
+    {
+      "path": "apps/desktop/package.json",
+      "bytes": 685,
+      "sha256": "b253c695ec1ac6cc934ed7dd124eb169f9ac13b548b6394cadce907b064982e3"
+    },
+    {
+      "path": "apps/desktop/playwright.config.ts",
+      "bytes": 1484,
+      "sha256": "edb133b230deed5243e2bb6e91bb03633662393c30562c4ba939a0cf1e7ca8e1"
+    },
+    {
+      "path": "apps/desktop/src-tauri/Cargo.toml",
+      "bytes": 329,
+      "sha256": "f2365747f99c0a5e84e73059757ad77f61214e0b354397092d2fc357739aa77d"
+    },
+    {
+      "path": "apps/desktop/src-tauri/build.rs",
+      "bytes": 35,
+      "sha256": "8af41c0062014fc594e4bb9899e60ee9930ab57d4cf0c73041ff557d6ec736e6"
+    },
+    {
+      "path": "apps/desktop/src-tauri/capabilities/default.json",
+      "bytes": 225,
+      "sha256": "1416a6f9946a5fc457f48324fe1238fdb73e69ce7a13158921c3c657d7bc3601"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/main.rs",
+      "bytes": 4976,
+      "sha256": "4583919d0d7cd4acbdf1f07e6599289eb6a84ac0343710c46da28ee69ad6db13"
+    },
+    {
+      "path": "apps/desktop/src-tauri/tauri.conf.json",
+      "bytes": 949,
+      "sha256": "0c394e0db614c171d5b96ae65366717841a7fbbc10d006b1c701689eb8513595"
+    },
+    {
+      "path": "apps/desktop/src/AccountConnections.tsx",
+      "bytes": 17547,
+      "sha256": "2447c09cf1d2c481ff016ee8f1c70b9deef0e769171e679ced208d189fd82d7c"
+    },
+    {
+      "path": "apps/desktop/src/AgentStudio.tsx",
+      "bytes": 8205,
+      "sha256": "f3514a73c8faa1a86a1c605846678d916cbd63bb0e9f6d6a407380d4cc6dc021"
+    },
+    {
+      "path": "apps/desktop/src/BrowserAgentPanel.tsx",
+      "bytes": 7379,
+      "sha256": "4b9bfc54666f885e2b08e249bbb46ccfa0d656a1bde3242e087d6aed1ba2ae2f"
+    },
+    {
+      "path": "apps/desktop/src/BrowserStudio.tsx",
+      "bytes": 4413,
+      "sha256": "ea11d01634f70c7cf1ca755e0be2ece9c8e5deae3fe71edcbabbf2ef369c8fe0"
+    },
+    {
+      "path": "apps/desktop/src/CodeStudio.tsx",
+      "bytes": 4734,
+      "sha256": "0228ff371544187f88792bd2cac97cdee25b27b174766194d4495846ef4828e6"
+    },
+    {
+      "path": "apps/desktop/src/DatasetStudio.tsx",
+      "bytes": 11803,
+      "sha256": "f49ae86320867a69313c1ce46118805a4ed7841665884da6f0b78c0caeb92c10"
+    },
+    {
+      "path": "apps/desktop/src/DesktopStudio.tsx",
+      "bytes": 5466,
+      "sha256": "e515ee970a1fb2b4171a022927e9dc7a2379acc8a2ec458ac2636b746747b46f"
+    },
+    {
+      "path": "apps/desktop/src/DeveloperTerminal.tsx",
+      "bytes": 7314,
+      "sha256": "691be41c9ac1b4db987233be739f180b786ebdad0554b6441d46414991e3399b"
+    },
+    {
+      "path": "apps/desktop/src/Ecosystem.tsx",
+      "bytes": 2381,
+      "sha256": "70a345cb0caeb4860117548266a10375441aa97c27d37e3752e287d21b95e7a9"
+    },
+    {
+      "path": "apps/desktop/src/MemoryPanel.tsx",
+      "bytes": 6980,
+      "sha256": "ef2ac18e025ed0cc4e013cf549cbed1b665031eecd50b83a8bb2f787cb140bff"
+    },
+    {
+      "path": "apps/desktop/src/ModelStudio.tsx",
+      "bytes": 20566,
+      "sha256": "2d208a70da2e81dbd0f5933be103c3155bc7277daf279c79f863ae5386c2f9c2"
+    },
+    {
+      "path": "apps/desktop/src/PetsStudio.tsx",
+      "bytes": 34285,
+      "sha256": "d70ce42f987a1093d7eb058d66bf89065cb8755df43e3f4acc02c4bc46cdba92"
+    },
+    {
+      "path": "apps/desktop/src/ProjectRepair.tsx",
+      "bytes": 5331,
+      "sha256": "abb076970ea88a05852fb5fbb0e2579898b46e1fcb162470dd03d6854610c625"
+    },
+    {
+      "path": "apps/desktop/src/ScreenCapture.tsx",
+      "bytes": 5998,
+      "sha256": "99757cbd5c6ea44ed0a90ba65807d15841de389e361fe65c67daf95a94e84d54"
+    },
+    {
+      "path": "apps/desktop/src/Skills.tsx",
+      "bytes": 6239,
+      "sha256": "9d7dc5c6b9d57e8eb2ab8774deae4b65dfaa18d1d608b8653ed6812565d1f358"
+    },
+    {
+      "path": "apps/desktop/src/bridge.ts",
+      "bytes": 1039,
+      "sha256": "86ef1a55ea1c6f56dffa759484be2e67d2c29c556306eab57d219d9a3719177a"
+    },
+    {
+      "path": "apps/desktop/src/connectors.css",
+      "bytes": 5316,
+      "sha256": "899e66a9d33e00ac296ab187d6b976db2d4501d748623964fde08beeb7eea2e2"
+    },
+    {
+      "path": "apps/desktop/src/contracts.ts",
+      "bytes": 1532,
+      "sha256": "9bd824de648661bbef9ea505f550cb0399c7fa7029ba8dbcce314071e02928c0"
+    },
+    {
+      "path": "apps/desktop/src/main.tsx",
+      "bytes": 40026,
+      "sha256": "64f2e68e9be3153cfc5ed1369ad8b05f8bb8ed057f42e223fbae76a7061d3d78"
+    },
+    {
+      "path": "apps/desktop/src/pets.css",
+      "bytes": 8161,
+      "sha256": "ba3e56018c31597e1cefcc775ce075a83a493fe2f2890b17453b7d4fc9421ed7"
+    },
+    {
+      "path": "apps/desktop/src/styles.css",
+      "bytes": 17343,
+      "sha256": "1b450134183c2d79cc3c64674dede07cc1b0553c77a30b72915b9f2a1172b75e"
+    },
+    {
+      "path": "apps/desktop/tests/connectors.spec.ts",
+      "bytes": 12670,
+      "sha256": "77c35150f13d00b6be17273ca746ab4f7c16ce9e2f0b8cd70c1c8eb1cb4f9f34"
+    },
+    {
+      "path": "apps/desktop/tests/ecosystem.spec.ts",
+      "bytes": 3933,
+      "sha256": "2b5d4e6afd009e6471f804f4f440b983f4592ece8cfe1252a60bf704ac76e232"
+    },
+    {
+      "path": "apps/desktop/tests/pets.spec.ts",
+      "bytes": 9666,
+      "sha256": "b25f40f6c4b672beac552ee69f3d3da61cf664d27020a4bab41d3270e13bcc1c"
+    },
+    {
+      "path": "apps/desktop/tests/screen-reading.spec.ts",
+      "bytes": 3512,
+      "sha256": "b9f125d21da7557802a78ae5888e69d07ba94e783161220ac2861d998d18dbaf"
+    },
+    {
+      "path": "apps/desktop/tests/shared-memory.spec.ts",
+      "bytes": 3165,
+      "sha256": "f9725c6c30c6a05f88082656c3dab1c9f1f519262b09c5cdac178afd694516d7"
+    },
+    {
+      "path": "apps/desktop/tests/smartload.spec.ts",
+      "bytes": 2618,
+      "sha256": "fc7a1ba4daeae1579e2698f3f833f22af5823e1938f49a904370c422931b56cc"
+    },
+    {
+      "path": "apps/desktop/tests/studio.spec.ts",
+      "bytes": 56274,
+      "sha256": "e44f5d3469b05d227aecda0b2dcb56132560881ccda82c94bc14f6f3f477ccd2"
+    },
+    {
+      "path": "apps/desktop/tests/terminal.spec.ts",
+      "bytes": 2386,
+      "sha256": "9603590933c6e58057341391de1195c04350232a937abea0ce7fa4e18297ba54"
+    },
+    {
+      "path": "apps/desktop/tsconfig.json",
+      "bytes": 409,
+      "sha256": "64c0f81a1cff8d18106548b81e38e7bcf33584f02b2441f1586580f9feb5a594"
+    },
+    {
+      "path": "apps/desktop/vite.config.ts",
+      "bytes": 214,
+      "sha256": "ea0886e6b76764c4aa94e7b538ca0a8cb7f2269e16600c45035d450456f603b3"
+    },
+    {
+      "path": "apps/windows-native/LocalVoice.cs",
+      "bytes": 11386,
+      "sha256": "888627ab7c09ad26b08d68bfb93a7cd4011e0d05bcdbb9087d3b77ba2b98be57"
+    },
+    {
+      "path": "apps/windows-native/Pets.config",
+      "bytes": 454,
+      "sha256": "9f5568416492825b1214b824b5a03d2312552268b31eb8bf3792833656000ebd"
+    },
+    {
+      "path": "apps/windows-native/Pets.cs",
+      "bytes": 66230,
+      "sha256": "edf337210da597ae9a6a441432c377a84dd661aaab20227dc9195177ff9ed0b9"
+    },
+    {
+      "path": "apps/windows-native/Program.cs",
+      "bytes": 15083,
+      "sha256": "b29b9d7511efce40110e51b2a05367c15166fa7f522a426932b87e9b98112604"
+    },
+    {
+      "path": "apps/windows-native/Setup.cs",
+      "bytes": 12161,
+      "sha256": "2f86c603015ddfc9cfc68531ece953de2d5fcfa98c4f3f62eb9686bcbb04dc78"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/__init__.py",
+      "bytes": 78,
+      "sha256": "12148e58190fc5bd4c0019c1680e49b903ca034a7ff17f15a943ce731ece8694"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/__main__.py",
+      "bytes": 5715,
+      "sha256": "c3d1aa040168d4a552535a90228bbd7633f320f9bf4fd664ed1adc5d3e6a34da"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/actions.py",
+      "bytes": 101293,
+      "sha256": "33abd4d43749e6d71b40c89bc7d18256beaac80220b1e23691227580e0a49028"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/agents.py",
+      "bytes": 6225,
+      "sha256": "04cabfcfd78cdc39912f7ee5c5d2f275d2b30e2d524e0f74ac63871165b02440"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/app_catalog.py",
+      "bytes": 8909,
+      "sha256": "a3707905c00b6e4a5395176edc07e6ce7829f623f14e429e70c02381fd7916b1"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/browser.py",
+      "bytes": 21150,
+      "sha256": "f84e3504a74d239d7eb9bf9ae8328ff1099298554b4d465337aaf1d40aaec5c7"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/browser_agent.py",
+      "bytes": 20908,
+      "sha256": "6ded841d166612534123c47a32bcbb01388aae0c8d27ef6d4e74457e918956bd"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/checks.py",
+      "bytes": 19997,
+      "sha256": "3689debeca4f2f4aa1b1fc927f667334280f39ba84a10f05fc7a5c301732dbec"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/computer_prompt.py",
+      "bytes": 2504,
+      "sha256": "43ef32c49d5294c76935bfddbd2b265c4d1c7eeafe16960ee6a7578bb1a5b16e"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/connections.py",
+      "bytes": 23606,
+      "sha256": "f5b10dc148bd68782917c7b0c8edfa362ad2b52f4cbf659d9adf8f94b09a9c35"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/connector_oauth.py",
+      "bytes": 10734,
+      "sha256": "6e9714bcb843dcf969f26bcccb0518583e1b842e86c2dbd35c180828b71d8874"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/desktop.py",
+      "bytes": 22267,
+      "sha256": "15eac61795192d5456d0b1e352a97636b7ab9b71db21e364044ff32791ff5d25"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/developer_terminal.py",
+      "bytes": 13181,
+      "sha256": "fcaf8346126b31f4b69e619d96343e330e78c10507eedf94c657a61788f1216f"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/hf_datasets.py",
+      "bytes": 10696,
+      "sha256": "b1481ab126803e655c7547afba190a5128f4436e1d174fded616c3225f348a2a"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/hub.py",
+      "bytes": 4735,
+      "sha256": "bf8d8260593396362cb876278140f3d47711b9828ce5bad8614829c1339ca918"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/local_connections.py",
+      "bytes": 3768,
+      "sha256": "e71daf6a1a87a615b15f4450ac7b1378d09958cbd94ae4d4cf894f051d61085e"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/local_speech.py",
+      "bytes": 5974,
+      "sha256": "f1e73709a03fe2ebcf37370595d3abd5b712f8d2aca5df2f6861debd28a71b3f"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/pets.py",
+      "bytes": 25471,
+      "sha256": "21254c36cf390513fdbf1e800ef09f24412d614d13f662213fe360cba4df9f31"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/request_routing.py",
+      "bytes": 11694,
+      "sha256": "c618449b12acfef09b3da05558d8ed60dbe75dd2a2bf96fab65178470d789253"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/rpc.py",
+      "bytes": 29823,
+      "sha256": "48a9e0fded5a1fce4913c04f4b2d6eca23ad15b9a600c9ff5e31c40b85cf697a"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/skills.py",
+      "bytes": 10121,
+      "sha256": "d07b94183c3e2f355b9b2b66f2c534c038c9403f7cb74f8eab3c2a2b143d8fe4"
+    },
+    {
+      "path": "apps/worker/rainforge_worker/workspace.py",
+      "bytes": 7968,
+      "sha256": "bb7f92ab129857aeae8df836650c1e5261c3f42be46e039663d1f85ece013256"
+    },
+    {
+      "path": "docs/BROWSER_AGENT.md",
+      "bytes": 7356,
+      "sha256": "219a05b3131f728ea4d3f1910b465a42a0fbf258d6fc79fcc15485bd14642f21"
+    },
+    {
+      "path": "docs/BROWSER_CHECKS.md",
+      "bytes": 3552,
+      "sha256": "8acfb214ed8f4e38563f28cae950cd8d9d9920b86277e9757eb418ca3582b998"
+    },
+    {
+      "path": "docs/BUILD_GUIDE.md",
+      "bytes": 4288,
+      "sha256": "55312c6ff3e93c2dbb5fb43697d59ec35a342fa4f402b94131de5c72a76d82d2"
+    },
+    {
+      "path": "docs/ECOSYSTEM.md",
+      "bytes": 2325,
+      "sha256": "1b962194963f0c103af41e5df5a3a09a00b63b06cf287e6f70b6209448bc4a7f"
+    },
+    {
+      "path": "docs/OFFLINE_ASSETS_NOTICE.txt",
+      "bytes": 1463,
+      "sha256": "0bfd4258c8cba24393075657697a04f24ad20b1c2d67aa8f6772aa77c24768e6"
+    },
+    {
+      "path": "docs/SECURITY.md",
+      "bytes": 3912,
+      "sha256": "c3531080731ff63743bd3b2199565342bd1a84f0f775d41b6d7664f88da291da"
+    },
+    {
+      "path": "docs/SMARTLOAD_RESEARCH.md",
+      "bytes": 11200,
+      "sha256": "4175a6164c048b14c30a99383f6043fd71c3be89c335a2d7ce8de7103e8b0951"
+    },
+    {
+      "path": "docs/USER_GUIDE.md",
+      "bytes": 5004,
+      "sha256": "f1e562502cdde73d3dd26fe3abd9e40cd61c7d86685edac4e969c77f68703e56"
+    },
+    {
+      "path": "docs/WEBSOCKET_CLIENT_LICENSE.txt",
+      "bytes": 11542,
+      "sha256": "4a6642aaf450ad71f50e1edafdedd5b2a5dd4731c2aa33499b6516d980037135"
+    },
+    {
+      "path": "docs/WINDOWS_CORE.md",
+      "bytes": 2008,
+      "sha256": "d00446f73825d50b275edd692e771d446b610a7e0f845dfffb649e1eb8ea1ed8"
+    },
+    {
+      "path": "docs/WINDOWS_INSTALLER.md",
+      "bytes": 1394,
+      "sha256": "13c3a97fbbcf09d50ba274e5774ec97a9955d8f5e9a04988cc936725e6a4f399"
+    },
+    {
+      "path": "packages/contracts/rpc.schema.json",
+      "bytes": 2342,
+      "sha256": "058f5343b4fd7fd771eeec545a1b30e6620c4875d02f59b785cbb1f0ca4a165b"
+    },
+    {
+      "path": "packages/dataset-engine/rainforge_datasets/__init__.py",
+      "bytes": 143,
+      "sha256": "4b6a02b0a2c9211ec76a67c2efec830e8abdaec0f549080a27caf991f517f1a1"
+    },
+    {
+      "path": "packages/dataset-engine/rainforge_datasets/engine.py",
+      "bytes": 17640,
+      "sha256": "90b8b08ec5fb51c1ea4965faaaa468814ebf62ba7dd72979fadc69c5e52d24d4"
+    },
+    {
+      "path": "packages/native-ai/rainforge_native/__init__.py",
+      "bytes": 64,
+      "sha256": "f3e2ab7d8028771f84761b3f05be3d1c5d614884574abaabfa3b95e1344b41aa"
+    },
+    {
+      "path": "packages/native-ai/rainforge_native/download.py",
+      "bytes": 5960,
+      "sha256": "be9ca8232eed2d10cdc3150956aaeed981d9b5170e6111df2bc5b5eb0591eeff"
+    },
+    {
+      "path": "packages/native-ai/rainforge_native/gguf.py",
+      "bytes": 2977,
+      "sha256": "02e85e68581ec7657cc9c712fd5574e39687ab168052e984601c65682441cfa7"
+    },
+    {
+      "path": "packages/native-ai/rainforge_native/runtime.py",
+      "bytes": 12549,
+      "sha256": "406256fdd2397215ee9d368d8dc7603f1df9c7151853dd2c13fc57f7fe13a842"
+    },
+    {
+      "path": "packages/native-ai/rainforge_native/smartload.py",
+      "bytes": 10221,
+      "sha256": "71be5486e0bf9da860a88a3b49e867e495a22486525604e9e0bf07094ad51ea4"
+    },
+    {
+      "path": "packages/native-ai/rainforge_native/windows_job.py",
+      "bytes": 2305,
+      "sha256": "449887ebb4b8c471ccebcb9686245664e4df7f5db699d037a3e0eae9ed2f23c3"
+    },
+    {
+      "path": "packages/nexus-core/rainforge_core/__init__.py",
+      "bytes": 62,
+      "sha256": "08729c02e3e976142a9c1822a9b2cd45fcd89893dfa2dbf248588619cc2e1646"
+    },
+    {
+      "path": "packages/nexus-core/rainforge_core/service.py",
+      "bytes": 25850,
+      "sha256": "b28ac7e015fe64283223be78c06ce776c670c95baa103a874f037213b4e95b6a"
+    },
+    {
+      "path": "packages/recovery/rainforge_recovery/__init__.py",
+      "bytes": 174,
+      "sha256": "4e91a2e81746b204c2a998d8a3a8b209d26e533aa6ad8ac75fa36ed35c6bb4fe"
+    },
+    {
+      "path": "packages/recovery/rainforge_recovery/storage.py",
+      "bytes": 3163,
+      "sha256": "2dd8350cb03aa6b09563fddc18f02086730c16a7eb13c704d79aa5ebc5b9347f"
+    },
+    {
+      "path": "packages/security/rainforge_security/__init__.py",
+      "bytes": 2002,
+      "sha256": "63b999b7630353ea6eec41865edc5e0c8f8e29181c266e48d55ef7490a14b8b8"
+    },
+    {
+      "path": "packages/task-engine/rainforge_tasks/__init__.py",
+      "bytes": 86,
+      "sha256": "e8c1edb1fa068e9cefd68a4495b4d9407288cdef1462701955dd1fdadc546c5a"
+    },
+    {
+      "path": "packages/task-engine/rainforge_tasks/graph.py",
+      "bytes": 2315,
+      "sha256": "d2abcec6d47d854996bdcbee2278e1a551541324922826280633b4012516c9e9"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 232,
+      "sha256": "413e46dd04d9cadbed8bbfd8102bf24b86ae903ff8b7d839524bd8c19343863d"
+    },
+    {
+      "path": "requirements-build.txt",
+      "bytes": 180,
+      "sha256": "d89a1604e3c5e7c92a498f64a93ee677fec753c16aaf28234e1e3394ad4fd0ab"
+    },
+    {
+      "path": "runtime/catalog.json",
+      "bytes": 12998,
+      "sha256": "2b738be306c24e7ec7dcba2b08e5d5894a6936cd7ace2eacfa0e046ef83795d6"
+    },
+    {
+      "path": "scripts/benchmark_datasets.py",
+      "bytes": 2428,
+      "sha256": "693baf05aff432f921c94edcf1b7f9ad87b391c41515d582fb025d574d385868"
+    },
+    {
+      "path": "scripts/benchmark_smartload.py",
+      "bytes": 3267,
+      "sha256": "57ce8f1830d256f22054856806308eedd603dc116946a3d8226d1676c37fa8bb"
+    },
+    {
+      "path": "scripts/bootstrap.py",
+      "bytes": 352,
+      "sha256": "0f847300c8a2731355515bc3cd36fc0bb1d9f4abb9e4caab00f88bb01c97b891"
+    },
+    {
+      "path": "scripts/build_windows.py",
+      "bytes": 5410,
+      "sha256": "3929684ed16be3e76a7ff5a9ef8f4a028d722f6484fd8368ade2b1287b8a4360"
+    },
+    {
+      "path": "scripts/build_worker.py",
+      "bytes": 775,
+      "sha256": "68249812e207addcf30afe61911749e3d9e8bfbc38f3487cbbc2f596d54bc0a6"
+    },
+    {
+      "path": "scripts/dev_ui.ps1",
+      "bytes": 509,
+      "sha256": "8bf0e188411b88b024cd2ea8239daa1e064f8cab50af22a41ec3df0d5db6a0f7"
+    },
+    {
+      "path": "scripts/make_portable.ps1",
+      "bytes": 3268,
+      "sha256": "64f71e6844655193b1dff3b3a2d110acd8c1eb4880e6c9428ab1f2225deb9c44"
+    },
+    {
+      "path": "scripts/packaged_assets.py",
+      "bytes": 8950,
+      "sha256": "d6cef0f7263fe75fc785330f0838b872e79cf8bb0967c12fca449dcf935fef71"
+    },
+    {
+      "path": "scripts/portable_launcher.ps1",
+      "bytes": 4941,
+      "sha256": "45952d2c7d9092412e2804a247a419549ee5987211eaa0f157cf44da0a6f6eb7"
+    },
+    {
+      "path": "scripts/prepare_public_source.py",
+      "bytes": 3666,
+      "sha256": "b5417f6861b1ea465436cf9c83470ee208f420d495ac4484427a746e9f9f7982"
+    },
+    {
+      "path": "scripts/prepare_runtime.py",
+      "bytes": 3537,
+      "sha256": "ff670046d926eb459f9e198d3e457a291edff7f6ec5a807d113966b8cb5cad79"
+    },
+    {
+      "path": "scripts/prepare_vulkan.py",
+      "bytes": 750,
+      "sha256": "f9cdcba85508b716d447cd0987f2f9ea51744abb0246329715669a1158a1277f"
+    },
+    {
+      "path": "scripts/resume.py",
+      "bytes": 558,
+      "sha256": "3484428639a45072ed171800e7671b0f1877738bc2d16bf53d7e7422ea208ef0"
+    },
+    {
+      "path": "scripts/run_checks.py",
+      "bytes": 1116,
+      "sha256": "1f79b7898626108d92d11082cb580a03eaaed014eac35c3ed3a2c8fdfa23f5e5"
+    },
+    {
+      "path": "scripts/session.py",
+      "bytes": 355,
+      "sha256": "42f64dee5650f27378e2751c563b6dc73a5555452fb2ca2349731dbd3c0b0550"
+    },
+    {
+      "path": "scripts/smoke_packaged_worker.py",
+      "bytes": 4328,
+      "sha256": "8178f11b2b3b10fd46cc1f6433e9b050a4b5fa43dcde039b6db1f2d095010689"
+    },
+    {
+      "path": "scripts/test_browser_agent_model.py",
+      "bytes": 2611,
+      "sha256": "e74b87ade3d967ac4abf6ea94e85b3a55f0370d5e7e0a01dac929e2bcdf2af5b"
+    },
+    {
+      "path": "scripts/test_browser_agent_packaged.py",
+      "bytes": 4186,
+      "sha256": "3a75957c2cb08cc686261f795aeff7d44853ea5ac41c493e814dcb573eac568f"
+    },
+    {
+      "path": "scripts/test_mini_followup_model.py",
+      "bytes": 3298,
+      "sha256": "03ed3d9bb90466c87c2af536d636987d1fa4bf0ce2e48f12371136a025796c65"
+    },
+    {
+      "path": "scripts/test_model_browser_check.py",
+      "bytes": 2575,
+      "sha256": "37ba32e3dae33905371737879f287c21ef3be945e603ef142abbdd7dd0ab6ff9"
+    },
+    {
+      "path": "scripts/test_native_recovery.py",
+      "bytes": 3794,
+      "sha256": "594e3d357cb37b4b628b6551d7b1ce0c1b41d1828add5867b9854d482659fbf0"
+    },
+    {
+      "path": "scripts/test_packaged_datasets.py",
+      "bytes": 3007,
+      "sha256": "c1e8989aabd61e2ecdd7e83c4327efbcf3564cf6a23b39e0aaea93d90f4f1046"
+    },
+    {
+      "path": "scripts/test_pets_input.py",
+      "bytes": 4823,
+      "sha256": "dedd9efc1d1c671169a4334e73aaab705f44c1d35826e8f7cbe7c360224f8dd4"
+    },
+    {
+      "path": "scripts/test_pets_native.py",
+      "bytes": 15962,
+      "sha256": "e357ef7ec6e4cf494f756d137d7886d0d7a9484e8593687ecb3bc174b7d37f52"
+    },
+    {
+      "path": "scripts/test_public_web_input.py",
+      "bytes": 3422,
+      "sha256": "5b398e354cf2a1461beaf11a1537cc120615caa70140b67f8fb4229a75b3bb10"
+    },
+    {
+      "path": "scripts/test_web_creation_model.py",
+      "bytes": 6254,
+      "sha256": "2be70aefc0bc1b55260c7802201880a080974c61fa4200debe70d7c1452324e9"
+    },
+    {
+      "path": "scripts/test_windows_release.py",
+      "bytes": 4210,
+      "sha256": "3df9180d59cd6decb8026f7b2486d8fe6c78a32a0d7459ce79c0e0dbfc3ececc"
+    },
+    {
+      "path": "scripts/worker.py",
+      "bytes": 492,
+      "sha256": "15893a82edd29de7d1f35fe2f2c0db0acbefceef5abcf9c0784304fee9374a6f"
+    },
+    {
+      "path": "tests/fixtures/browser-agent.html",
+      "bytes": 1132,
+      "sha256": "64b688a4032143bb2a826d39c85486eee514207f87e1020473da41d90bd66f90"
+    },
+    {
+      "path": "tests/fixtures/desktop-fixture.ps1",
+      "bytes": 846,
+      "sha256": "f63e277b148e0f381b73855442409e5c8676bc3ce7b062c7792ae282d04d364f"
+    },
+    {
+      "path": "tests/fixtures/desktop-patterns.ps1",
+      "bytes": 1463,
+      "sha256": "8ad8269d80013566600dea1cf7b6b5cbca079b2e7d63d133fdf5c66e4ce3744d"
+    },
+    {
+      "path": "tests/fixtures/pets-fullscreen.ps1",
+      "bytes": 926,
+      "sha256": "0c593db0a2e903e90d074f877c5d2abde234a0994b1a57202c8f3417c0af7d67"
+    },
+    {
+      "path": "tests/fixtures/screen-reading.ps1",
+      "bytes": 1003,
+      "sha256": "f499c0cff7c0180aaa8c02faed054d9944d146fc727f8806faf2e23271e9fb22"
+    },
+    {
+      "path": "tests/test_action_loop.py",
+      "bytes": 16891,
+      "sha256": "1e67cde5636993969a15816712d1bf1aae6eba8c3d10242c17cac2dffc9e8e43"
+    },
+    {
+      "path": "tests/test_actions.py",
+      "bytes": 6174,
+      "sha256": "9eb2265091b1c6ea03e5bf063ddeb0d745a3c50f1957bdbb69693b9dc7a7b013"
+    },
+    {
+      "path": "tests/test_agents.py",
+      "bytes": 3841,
+      "sha256": "2a9df12abaf2f1556a21e86327ea0b02fc80d902e6ab08f4546dcfb24eb348e5"
+    },
+    {
+      "path": "tests/test_ai_tasks.py",
+      "bytes": 11390,
+      "sha256": "6dd1f8fc54126b1ae5200386df0487f9d5d83c87307d656543ef885285542cdc"
+    },
+    {
+      "path": "tests/test_app_catalog.py",
+      "bytes": 8158,
+      "sha256": "f8c3187348855e8197177e44ae4eb4a63b88fd5d19d2efd5f0cb88d84c71a12b"
+    },
+    {
+      "path": "tests/test_browser.py",
+      "bytes": 9716,
+      "sha256": "7d7629feea7f7150426c3fcecee79a4f7e2a10646746f59a63bcf64d79ca3452"
+    },
+    {
+      "path": "tests/test_browser_agent.py",
+      "bytes": 12780,
+      "sha256": "c8b30e18c44e6af6c11599e320f76f33afb1b1735808a1b33ab52bc332b7bb6b"
+    },
+    {
+      "path": "tests/test_browser_editors.py",
+      "bytes": 7096,
+      "sha256": "3ab3a6a818aef221b34b9568bef49fcb28587c1fe03275c168a012f5a4499382"
+    },
+    {
+      "path": "tests/test_connections.py",
+      "bytes": 1354,
+      "sha256": "fee224a4e16892d6ccd6c97872642117f2ac12a818eed64fb3cf68662f2f40af"
+    },
+    {
+      "path": "tests/test_connector_center.py",
+      "bytes": 16679,
+      "sha256": "dc6660a459454c1ab998a2d343908a68b8dcae4de1539ed5918cd817be4d7c41"
+    },
+    {
+      "path": "tests/test_conversations.py",
+      "bytes": 5519,
+      "sha256": "0fc4834769aeb7dbf4619ccc701acac59b4021ac058d6726bab81b5a02c97ecf"
+    },
+    {
+      "path": "tests/test_core.py",
+      "bytes": 8301,
+      "sha256": "aeed44be094d9285492bf06e04ce86bd8160e1fe293bff805b85badd745bb4c8"
+    },
+    {
+      "path": "tests/test_datasets.py",
+      "bytes": 7527,
+      "sha256": "89dbcfacdec05d40e08798b3759364fe1d8f9824414b7f252decee49290871cb"
+    },
+    {
+      "path": "tests/test_desktop.py",
+      "bytes": 6702,
+      "sha256": "46c6b50f2d56cbe0f95bcfcdcd45fa96171da10b49dfe0fb384eeaca099cb7c4"
+    },
+    {
+      "path": "tests/test_developer_terminal.py",
+      "bytes": 7955,
+      "sha256": "ba2f5d78ba1bd2cdfeffff347bf9e265a2f50cdbe0fc41d6f774e15fe55cbcbb"
+    },
+    {
+      "path": "tests/test_download.py",
+      "bytes": 4833,
+      "sha256": "44af80f61cb42b19c8bba025590e343c577b4280c866591b579d1b67ba2bdbe1"
+    },
+    {
+      "path": "tests/test_download_controls.py",
+      "bytes": 1758,
+      "sha256": "652aef2411924556098baa4c9e4d3e813ae85e2342a1b4051c27ec07ebb3f066"
+    },
+    {
+      "path": "tests/test_form_controls.py",
+      "bytes": 8777,
+      "sha256": "3c5ab56ac574d65bb25da629fe0484f5ca9df4236b7d159a3a89a98f03e68cba"
+    },
+    {
+      "path": "tests/test_gguf_structure.py",
+      "bytes": 6973,
+      "sha256": "61d968790f4053eeef2ed10ae0bf2a0d296f2a469923af0b89e86bc63e105dfb"
+    },
+    {
+      "path": "tests/test_hf_datasets.py",
+      "bytes": 6778,
+      "sha256": "96acdcc1a912c12d1dfc12b2c1974f13b3107885f051f2ca976b44eeb1641f26"
+    },
+    {
+      "path": "tests/test_hub.py",
+      "bytes": 3077,
+      "sha256": "8e188ff84fa1ee9973dc43d5bc02d3f863d77b585539ab06244fe04a12f860df"
+    },
+    {
+      "path": "tests/test_live_vision.py",
+      "bytes": 3216,
+      "sha256": "a0a013fae5d41e3f8a75d72d931de262eb2581fed672b47cded6d517af8ea9b2"
+    },
+    {
+      "path": "tests/test_local_connections.py",
+      "bytes": 3086,
+      "sha256": "8149786e6a39a06e43be28524db52496eb1621b0bdac7b8eb89ce6153fb642cc"
+    },
+    {
+      "path": "tests/test_memory.py",
+      "bytes": 11364,
+      "sha256": "d7bc2dd67dea7a33022362b6b591cf8e10c03c907a01fcb2fcb79d209f168d8a"
+    },
+    {
+      "path": "tests/test_native.py",
+      "bytes": 6322,
+      "sha256": "e989748f7bc9822fb1f44e396343fa8724a6f12b99bc79cd1ccc23b3ca7d93c6"
+    },
+    {
+      "path": "tests/test_packaged_assets.py",
+      "bytes": 5314,
+      "sha256": "ec140cb83d8033a08b9f1392f64080de06853ab6e8d8f5679bf08f82cc30ef66"
+    },
+    {
+      "path": "tests/test_pets.py",
+      "bytes": 9777,
+      "sha256": "79a2ab2eb43a1d4324424b9af0e9596405c09ab0ebd5d6edee4689d040bf273c"
+    },
+    {
+      "path": "tests/test_project_checks.py",
+      "bytes": 3283,
+      "sha256": "7ec34577d8bd54b4624782b3fb4fbd87f27b3e9d15f0f1a8a20f879399e452f2"
+    },
+    {
+      "path": "tests/test_project_generation.py",
+      "bytes": 14661,
+      "sha256": "fe63398c69f59a7938424bad74a67f707794ab76f8b5dfab1fa9870a32c1d70d"
+    },
+    {
+      "path": "tests/test_project_repair.py",
+      "bytes": 7356,
+      "sha256": "029f8dabc50cee5fbffb2664f2c118ec51f69eb44188314758dde77f134c5948"
+    },
+    {
+      "path": "tests/test_recovery.py",
+      "bytes": 2573,
+      "sha256": "d7c3d53f229909da04483c1ba14a40cb44a3bd4e8fb051e670fd787cf62af9b4"
+    },
+    {
+      "path": "tests/test_request_routing.py",
+      "bytes": 22791,
+      "sha256": "e2b0f60e5e3d7e56c0cf2b7a0aedf59bd7bd7a9be07a9b574312fbefc6b53ae4"
+    },
+    {
+      "path": "tests/test_screen_reading.py",
+      "bytes": 4010,
+      "sha256": "174b7d7e61d6ab0ed49a3da5a47b39a2c56bd8252181aaed5482e1c313709bb2"
+    },
+    {
+      "path": "tests/test_semantic_intent.py",
+      "bytes": 3791,
+      "sha256": "bf9f258ecd5b5d7ab07985d863fa8da0f29dfc676746a3d3f67ebf1ff226355d"
+    },
+    {
+      "path": "tests/test_skills.py",
+      "bytes": 9382,
+      "sha256": "e928e258ad2b3f4846beff5daadfb62bf5d5c63eec71773daf8f19001da62fbb"
+    },
+    {
+      "path": "tests/test_smartload.py",
+      "bytes": 4576,
+      "sha256": "9ca83b616d318364d2192a2ba54c224726687044ca8443d538daa870e253377d"
+    },
+    {
+      "path": "tests/test_transport.py",
+      "bytes": 3308,
+      "sha256": "7a0f4159d0c29177c72bf45b3aea47702a3a15bd8bc5690512ba686eb9ea0580"
+    },
+    {
+      "path": "tests/test_workspace.py",
+      "bytes": 1921,
+      "sha256": "fdb320983be6df63a0249e9c674c3a8533af768e20bded5e9e4e29b8b109dc38"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    }
+  ]
+}

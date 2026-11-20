@@ -1,0 +1,31 @@
+import {test,expect} from '@playwright/test';
+
+test('shared memory opt-in and user correction persist, edit and delete through real worker',async({page})=>{
+ const correction='Use unittest for regression fixture '+Date.now();
+ await page.goto('/');await page.locator('nav').getByRole('button',{name:'Агенты',exact:true}).click();
+ await expect(page.getByRole('heading',{name:'Общая память и исправления',exact:true})).toBeVisible();
+ const memory=page.getByRole('region',{name:'Память проекта',exact:true});
+ await memory.getByLabel('Использовать память проекта',{exact:true}).check();
+ await expect(memory.getByRole('button',{name:'Обновить память',exact:true})).toBeEnabled();
+ await memory.getByLabel('Автоматически сохранять явные предпочтения',{exact:true}).check();
+ await expect(memory.getByRole('button',{name:'Обновить память',exact:true})).toBeEnabled();
+ await memory.getByLabel('Исправление для памяти',{exact:true}).fill(correction);
+ await memory.getByRole('button',{name:'Сохранить исправление в общей памяти',exact:true}).click();
+ await expect(memory.getByText('User correction: '+correction,{exact:true})).toBeVisible();
+ await expect(memory.getByText('Исправление сохранено для всех моделей и агентов. Включите память, чтобы использовать его в новых задачах.',{exact:true})).toBeVisible();
+ await page.reload();await page.locator('nav').getByRole('button',{name:'Агенты',exact:true}).click();
+ await expect(memory.getByLabel('Использовать память проекта',{exact:true})).toBeChecked();
+ await expect(memory.getByLabel('Автоматически сохранять явные предпочтения',{exact:true})).toBeChecked();
+ const article=memory.locator('article').filter({hasText:correction});
+ await article.getByRole('button',{name:'Изменить заметку',exact:true}).click();
+ await memory.getByLabel('Текст заметки памяти',{exact:true}).fill('Updated '+correction);
+ await memory.getByRole('button',{name:'Сохранить заметку памяти',exact:true}).click();
+ await expect(memory.getByText('Updated '+correction,{exact:true})).toBeVisible();
+ page.once('dialog',dialog=>dialog.accept());
+ await memory.locator('article').filter({hasText:'Updated '+correction}).getByRole('button',{name:'Удалить заметку',exact:true}).click();
+ await expect(memory.getByText('Updated '+correction,{exact:true})).toHaveCount(0);
+ await memory.getByLabel('Автоматически сохранять явные предпочтения',{exact:true}).uncheck();
+ await expect(memory.getByRole('button',{name:'Обновить память',exact:true})).toBeEnabled();
+ await memory.getByLabel('Использовать память проекта',{exact:true}).uncheck();
+ await expect(memory.getByRole('button',{name:'Обновить память',exact:true})).toBeEnabled();
+});

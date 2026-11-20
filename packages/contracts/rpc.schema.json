@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RainForge local JSON-RPC request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "jsonrpc",
+    "id",
+    "method",
+    "params"
+  ],
+  "properties": {
+    "jsonrpc": {
+      "const": "2.0"
+    },
+    "id": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "method": {
+      "enum": [
+        "browser.agent.start",
+        "browser.agent.status",
+        "browser.agent.cancel",
+        "dataset.hf.describe",
+        "dataset.hf.start",
+        "dataset.hf.status",
+        "dataset.hf.cancel",
+        "dataset.list",
+        "dataset.start",
+        "dataset.cancel",
+        "dataset.read",
+        "dataset.upload.begin",
+        "dataset.upload.chunk",
+        "dataset.upload.finish",
+        "dataset.upload.cancel",
+        "agent.list",
+        "agent.save",
+        "agent.submit",
+        "agent.cancel",
+        "connection.list",
+        "connection.save",
+        "connection.test",
+        "connection.disconnect",
+        "workspace.list",
+        "workspace.read",
+        "workspace.write",
+        "workspace.check",
+        "computer.launch",
+        "task.execute",
+        "browser.navigate",
+        "browser.inspect",
+        "browser.click",
+        "browser.type",
+        "browser.wait",
+        "browser.close",
+        "coding.test",
+        "coding.autofix",
+        "desktop.windows",
+        "desktop.inspect",
+        "desktop.act",
+        "system.snapshot",
+        "goal.submit",
+        "workflow.get",
+        "artifact.read",
+        "model.start",
+        "smartload.plan",
+        "model.import",
+        "connector.query",
+        "model.stop",
+        "model.install.cancel",
+        "model.install",
+        "chat.begin",
+        "chat.poll",
+        "chat.cancel",
+        "terminal.start",
+        "terminal.status",
+        "terminal.cancel",
+        "skills.list",
+        "skills.configure",
+        "skills.approve",
+        "skills.remove"
+      ]
+    },
+    "params": {
+      "type": "object"
+    }
+  },
+  "$comment": "Method-specific required/allowed parameters and limits are enforced by the worker dispatcher; schema generation is a future task. No arbitrary shell method exists."
+}

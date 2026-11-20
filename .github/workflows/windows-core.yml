@@ -1,0 +1,71 @@
+name: Windows Core Preview
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: windows-core-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - run: python -m pip install -r requirements-build.txt
+      - run: npm ci
+        working-directory: apps/desktop
+      - run: npm run build
+        working-directory: apps/desktop
+      - run: python scripts/prepare_runtime.py --accept-license --with-smoke-model
+      - run: python scripts/run_checks.py --native
+      - run: npm run test:e2e
+        working-directory: apps/desktop
+      - run: python scripts/build_worker.py
+      - run: python scripts/smoke_packaged_worker.py --native
+      - run: python scripts/build_windows.py --core
+      - run: python scripts/test_windows_release.py --core
+      - name: Hash installer
+        shell: pwsh
+        run: |
+          $artifact = 'outputs/windows-core/RainForgeSetup.exe'
+          $digest = (Get-FileHash -LiteralPath $artifact -Algorithm SHA256).Hash.ToLowerInvariant()
+          "$digest  RainForgeSetup.exe" | Set-Content -Encoding ascii outputs/windows-core/SHA256SUMS.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: nexus-windows-core
+          path: outputs/windows-core/
+          if-no-files-found: error
+          retention-days: 30
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: nexus-windows-core
+          path: release
+      - name: Publish verified Core Preview
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag="core-${GITHUB_SHA:0:12}"
+          if ! gh release view "$tag" >/dev/null 2>&1; then
+            gh release create "$tag" --target "$GITHUB_SHA" --prerelease --title "Nexus Windows Core Preview" --notes "Unsigned Windows x64 preview. Bundled local dictation and starter model. Optional Dmitri neural synthesis is excluded; matching installed Windows voices are used when available. macOS native app is unfinished. Source, GUI, native generation, bundled Python console and installer lifecycle checks completed for this build."
+          fi
+          gh release upload "$tag" release/RainForgeSetup.exe release/SHA256SUMS.txt release/build.json
+

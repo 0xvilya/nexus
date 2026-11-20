@@ -1,0 +1,30 @@
+import {useEffect, useRef, useState} from 'react';
+import {rpc} from './bridge';
+
+type Event = {step:number;state:string;decision?:unknown;error?:string;result?:{no_observable_change?:boolean;acted?:boolean;reason?:string};target_label?:string};
+type Run = {id:string;state:string;goal:string;expected:{selector:string;text:string};events:Event[];
+  error:string|null;proof:{actual:string;url:string;condition:{selector:string;contains_text:string}}|null;
+  pending_action:unknown;elapsed_seconds?:number;page?:{title:string;text:string;url:string}};
+type Status = {run:Run|null;active:boolean};
+
+export function BrowserAgentPanel({onActive}:{onActive:(active:boolean)=>void}){
+ const [goal,setGoal]=useState(''),[expected,setExpected]=useState(''),[selector,setSelector]=useState('body');
+ const [mutation,setMutation]=useState(false),[steps,setSteps]=useState(6),[status,setStatus]=useState<Status>({run:null,active:false});
+ const [busy,setBusy]=useState(false),[error,setError]=useState('');
+ const initialized=useRef(false);
+ useEffect(()=>{let live=true;const poll=async()=>{try{const data=await rpc<Status>('browser.agent.status');if(live){setStatus(data);onActive(data.active);if(!initialized.current){initialized.current=true;if(data.run){setGoal(data.run.goal);setExpected(data.run.expected.text);setSelector(data.run.expected.selector)}}}}catch(e){if(live)setError((e as Error).message)}};void poll();const timer=setInterval(poll,500);return()=>{live=false;clearInterval(timer);onActive(false)}},[onActive]);
+ const action=async(fn:()=>Promise<void>)=>{setBusy(true);setError('');try{await fn()}catch(e){setError((e as Error).message)}finally{setBusy(false)}};
+ const run=status.run;
+ const stateLabel=(state:string)=>({queued:'В очереди',observing:'Читаю страницу',planning:'Выбираю следующий шаг',acting:'Выполняю действие',verifying:'Проверяю результат',checks_passed:'Условие подтверждено',blocked:'Нужна проверка',cancelled:'Остановлено',failed:'Ошибка',interrupted:'Прервано'} as Record<string,string>)[state]??state;
+ const eventLabel=(event:Event)=>{const decision=event.decision as {tool?:string}|undefined;const target=event.target_label||'выбранный элемент';if(event.state==='rejected')return 'План отклонён';if(event.state==='not_applied')return event.result?.reason==='value_already_matches'?'Поле уже содержит нужный текст':'Действие не выполнено — обновляю наблюдение';return ({type:'Ввод текста: '+target,click:'Нажатие: '+target,observe:'Повторное чтение страницы',wait:'Ожидание изменений'} as Record<string,string>)[decision?.tool??'']??'Шаг выполнен'};
+ return <section className="agent-panel browser-agent-panel"><p className="eyebrow">OBSERVE → ACT → VERIFY</p><h2>Браузерный агент</h2><p className="muted">Сначала откройте подготовленную страницу выше. Агент заново читает её после каждого шага и проверяет заданное условие. Один сайт, до 8 шагов, без автоматического повтора действий после сбоя.</p>
+ <label>Задание на открытой странице<textarea aria-label="Задание браузерному агенту" value={goal} onChange={e=>setGoal(e.target.value)} maxLength={2000} disabled={status.active}/></label>
+ <label>Где проверить результат (CSS)<input aria-label="Селектор результата агента" value={selector} onChange={e=>setSelector(e.target.value)} disabled={status.active} maxLength={300}/></label>
+ <label>Ожидаемый текст результата<input aria-label="Результат браузерного агента" value={expected} onChange={e=>setExpected(e.target.value)} disabled={status.active} maxLength={500}/></label>
+ <label>Лимит шагов<select aria-label="Лимит шагов браузерного агента" value={steps} onChange={e=>setSteps(Number(e.target.value))} disabled={status.active}>{[3,4,6,8].map(value=><option key={value} value={value}>{value}</option>)}</select></label>
+ <label><input aria-label="Разрешить действия браузерного агента" type="checkbox" checked={mutation} onChange={e=>setMutation(e.target.checked)} disabled={status.active}/>Разрешаю нажатия и ввод для этого задания на подготовленном сайте</label>
+ <p className="muted">Без разрешения доступны только наблюдение и ожидание. Успех означает совпадение указанного текста; выбирайте условие, которое подтверждает нужный результат.</p>
+ <div className="agent-toolbar"><button disabled={busy||status.active||!goal.trim()||!expected||!selector} onClick={()=>action(async()=>{await rpc('browser.agent.start',{goal,expected_text:expected,selector,allow_mutation:mutation,max_steps:steps});const data=await rpc<Status>('browser.agent.status');setStatus(data);onActive(data.active)})}>Запустить браузерного агента</button><button disabled={!status.active} onClick={()=>action(async()=>{await rpc('browser.agent.cancel')})}>Остановить агента</button></div>
+ {error&&<p role="alert" className="error-banner">{error}</p>}{run&&<div aria-live="polite"><h3>Состояние: <span data-testid="browser-agent-status" data-state={run.state}>{stateLabel(run.state)}</span></h3>{run.error&&<p role="alert">{run.error}</p>}<ol>{run.events.map((event,index)=><li key={index}><b>Шаг {event.step} · {eventLabel(event)}</b>{event.result?.acted&&event.result.no_observable_change&&<p className="muted">Видимых изменений нет. Повтор этого действия в том же состоянии отключён.</p>}<details><summary>Технические детали</summary><pre className="agent-answer">{JSON.stringify(event.decision,null,2)}</pre></details>{event.error&&<p>{event.error}</p>}</li>)}</ol>{run.proof&&run.state==='checks_passed'&&<div data-testid="browser-agent-proof"><b>Условие проверено</b><p>{run.proof.condition.selector} содержит: {run.proof.condition.contains_text}</p><small>{run.proof.url}</small><pre className="agent-answer">{run.proof.actual}</pre></div>}{!!run.pending_action&&['failed','interrupted','cancelled'].includes(run.state)&&<p role="alert">Результат последнего действия неизвестен. Проверьте страницу перед повторным запуском.</p>}{run.state==='interrupted'&&<p>Незавершённое действие не повторено. Проверьте текущее состояние страницы перед новым запуском.</p>}{run.page&&<details><summary>Последнее наблюдение: {run.page.title}</summary><pre className="agent-answer">{run.page.text}</pre></details>}</div>}
+ </section>
+}

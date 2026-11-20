@@ -1,0 +1,28 @@
+Nexus offline assets
+
+whisper.cpp v1.8.3 by the ggml authors, MIT
+https://github.com/ggml-org/whisper.cpp/tree/v1.8.3
+
+OpenAI Whisper base, MIT, ggml q5_1 conversion maintained by ggerganov
+https://github.com/openai/whisper
+https://huggingface.co/ggerganov/whisper.cpp/tree/5359861c739e955e79d9a303bcbc70fb988958b1
+
+SmolLM2-135M-Instruct by HuggingFaceTB, Apache 2.0
+https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct
+GGUF quantization by bartowski, Q4_K_M
+https://huggingface.co/bartowski/SmolLM2-135M-Instruct-GGUF/tree/09816acd5d99df7be770d85ea30822623dab342c
+
+Russian synthesis: Dmitri medium voice, INT8 ONNX conversion maintained by sherpa-onnx.
+Dataset attribution and CC0 information are retained in runtime/speech/MODEL_CARD.
+https://huggingface.co/rhasspy/piper-voices/tree/e7229f7d33a10e145e109b886d661984201ac3c4/ru/ru_RU/dmitri/medium
+https://github.com/k2-fsa/sherpa-onnx/releases/tag/tts-models
+
+sherpa-onnx v1.13.8, Apache 2.0 (Apache license text included).
+https://github.com/k2-fsa/sherpa-onnx/tree/v1.13.8
+ONNX Runtime v1.28.2, MIT and included third-party notices.
+https://github.com/microsoft/onnxruntime/tree/v1.28.2
+
+Piper phonemizer, MIT, and eSpeak NG, GPL-3.0-or-later.
+Pinned dependency source used in the Windows build:
+https://github.com/csukuangfj/piper-phonemize/tree/f3ff95afc03640bc1399e113e83361192a2fafb4
+https://github.com/csukuangfj/espeak-ng/tree/ed530aa113046142eb5115cf2fc9157854d0ffe1
