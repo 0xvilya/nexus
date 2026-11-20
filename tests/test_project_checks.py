@@ -1,10 +1,46 @@
-import sys,tempfile,unittest
+import os,sys,tempfile,unittest
 from pathlib import Path
 from types import SimpleNamespace
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'));import bootstrap
 from rainforge_worker.workspace import WorkspaceTools
 from rainforge_worker.checks import ProjectChecks
 class ProjectCheckTests(unittest.TestCase):
+ def _assert_aliased_workspace(self,data):
+  workspace=WorkspaceTools(data)
+  self.assertEqual(workspace.root,workspace.root.resolve())
+  source='import unittest\nclass T(unittest.TestCase):\n def test_ok(self): self.assertEqual(2+2,4)\n'
+  workspace.write('project/test_alias.py',source)
+  checks=ProjectChecks(SimpleNamespace(workspace_tools=workspace),data)
+  self.assertEqual(workspace.listing()['files'],['project/test_alias.py'])
+  self.assertEqual(checks._test_hashes('project'),{'project/test_alias.py':workspace.read('project/test_alias.py')['sha256']})
+  self.assertTrue(checks.run(True,directory='project')['ok'])
+  with self.assertRaises(ValueError):workspace.path('../outside.py')
+  with self.assertRaises(ValueError):checks._directory('../')
+ def test_noncanonical_workspace_root_uses_one_path_spelling(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   parent=Path(tmp)/'alias-parent';parent.mkdir()
+   self._assert_aliased_workspace(parent/'..')
+ def test_hashes_resolve_legacy_workspace_root_alias(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   workspace=WorkspaceTools(Path(tmp));workspace.write('test_alias.py','pass\n')
+   alias_parent=workspace.root/'alias-parent';alias_parent.mkdir()
+   workspace.root=alias_parent/'..'
+   checks=ProjectChecks(SimpleNamespace(workspace_tools=workspace),Path(tmp))
+   self.assertEqual(checks._test_hashes(),{'test_alias.py':workspace.read('test_alias.py')['sha256']})
+ @unittest.skipUnless(os.name=='nt','Windows 8.3 path aliases only')
+ def test_windows_short_workspace_root_alias(self):
+  import ctypes
+  from ctypes import wintypes
+  get_short=ctypes.WinDLL('kernel32',use_last_error=True).GetShortPathNameW
+  get_short.argtypes=[wintypes.LPCWSTR,wintypes.LPWSTR,wintypes.DWORD];get_short.restype=wintypes.DWORD
+  with tempfile.TemporaryDirectory(prefix='nexus-long-workspace-alias-') as tmp:
+   original=Path(tmp).resolve();buffer=ctypes.create_unicode_buffer(32768)
+   length=get_short(str(original),buffer,len(buffer))
+   if not length or length>=len(buffer):self.skipTest('GetShortPathNameW unavailable for fixture')
+   alias=Path(buffer.value)
+   if str(alias).casefold()==str(original).casefold():self.skipTest('8.3 name creation disabled on fixture volume')
+   self.assertEqual(alias.resolve(),original)
+   self._assert_aliased_workspace(alias)
  def test_real_pass_fail_empty_and_consent(self):
   with tempfile.TemporaryDirectory() as tmp:
    w=SimpleNamespace(workspace_tools=WorkspaceTools(Path(tmp)));c=ProjectChecks(w,Path(tmp))

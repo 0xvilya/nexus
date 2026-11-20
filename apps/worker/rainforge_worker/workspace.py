@@ -22,7 +22,10 @@ def desktop_directory():
 
 class WorkspaceTools:
  def __init__(self,data):
-  self.root=data/'coding-workspace';self.root.mkdir(parents=True,exist_ok=True);self.lock=threading.RLock();self.apps=AppCatalog()
+  self.root=data/'coding-workspace';self.root.mkdir(parents=True,exist_ok=True)
+  # Windows temp roots can use 8.3 aliases; use one canonical spelling for
+  # containment checks, enumeration and paths returned to project tools.
+  self.root=self.root.resolve();self.lock=threading.RLock();self.apps=AppCatalog()
  def path(self,path):
   if not isinstance(path,str) or not path or len(path)>240 or '\\' in path or ':' in path:raise ValueError('Use a relative path with forward slashes')
   p=Path(path)

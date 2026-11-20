@@ -283,8 +283,8 @@
     },
     {
       "path": "apps/worker/rainforge_worker/checks.py",
-      "bytes": 19997,
-      "sha256": "3689debeca4f2f4aa1b1fc927f667334280f39ba84a10f05fc7a5c301732dbec"
+      "bytes": 20020,
+      "sha256": "f8c07887bbbba1635a6ecdc788172993a288587319d324c14b2b8535524dff0a"
     },
     {
       "path": "apps/worker/rainforge_worker/computer_prompt.py",
@@ -353,8 +353,8 @@
     },
     {
       "path": "apps/worker/rainforge_worker/workspace.py",
-      "bytes": 7968,
-      "sha256": "bb7f92ab129857aeae8df836650c1e5261c3f42be46e039663d1f85ece013256"
+      "bytes": 8151,
+      "sha256": "497dffe9bb7b45c2e27a27fc4527b2076c21b6e481f0063a57dbbdafd54e9a7a"
     },
     {
       "path": "docs/BROWSER_AGENT.md",
@@ -808,8 +808,8 @@
     },
     {
       "path": "tests/test_project_checks.py",
-      "bytes": 3283,
-      "sha256": "7ec34577d8bd54b4624782b3fb4fbd87f27b3e9d15f0f1a8a20f879399e452f2"
+      "bytes": 5645,
+      "sha256": "55b919a9dd1d9a3bb7c1d00fea97b468305701fc5af5693e20ab7149d91377fb"
     },
     {
       "path": "tests/test_project_generation.py",

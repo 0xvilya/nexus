@@ -167,7 +167,8 @@ class ProjectChecks:
 
  def _test_hashes(self,directory=''):
   workspace=self.worker.workspace_tools
-  paths=[p.relative_to(workspace.root).as_posix() for p in self._directory(directory).rglob('test_*.py') if p.is_file()]
+  root=workspace.root.resolve()
+  paths=[p.relative_to(root).as_posix() for p in self._directory(directory).rglob('test_*.py') if p.is_file()]
   if len(paths)>100:raise ValueError('Для этого режима допускается не более 100 тестовых файлов')
   return {p:workspace.read(p)['sha256'] for p in sorted(paths)}
 
