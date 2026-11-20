@@ -5,6 +5,9 @@ on:
     branches: [main]
 permissions:
   contents: read
+env:
+  PYTHONUTF8: '1'
+  PYTHONIOENCODING: utf-8
 concurrency:
   group: windows-core-${{ github.ref }}
   cancel-in-progress: false
